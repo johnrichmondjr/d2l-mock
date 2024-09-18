@@ -23,11 +23,23 @@ Majority rules. If the majority of the group agrees on a key decision lets go wi
 
 ## Communication Mechanism
 
-We will meet and communicate via Discord. We will meet once a week after class.
+We will meet via Zoom and communicate through text via Discord. We will meet once a week Tuesdays at 7pm CST.
 
 ## Meeting Journal
 
+During our meeting on Tuesday September 17th we covered the following
+* What portion of the project each member will work on
+* We discussed conflict resolution
+* What software we will use for prototyping
+* The scope of the project
+
 ## Decision Made
+| # | Area  | Decision | Alternative | Rationale
+| ----------- | ----------- | --- | --- |--- |
+| 1 | IDE | Will use VS Code |IntelliJ, Eclipse | We use VS Code for everything else so we like this one
+| 2 | Dependency Management  | Maven | Gradle | This seems to be the one our team is most familiar with
+| 3 | Code  | Lombok | Code template code | We would love to not have to write a ton of boiler plate code for everything
+| 4 | Configuration Management  | Yaml | .env files | Yaml is pretty standard industry wide for configuration management
 
 ## Screenshot of working code
 
