@@ -10,7 +10,7 @@ This project is a Mock D2L app that has some features that are available in DePa
 |---------|----------------------------------------|-----------------------|
 | John    | Discussion Thread                      | I Really Want An A    |
 |         | Course and Course Features             |                       |
-|         | Course Admin                           |                       |
+| puneeth | Course Admin                           |                       |
 |         | Student and Student Admin              |                       |
 
 ## Github Location
