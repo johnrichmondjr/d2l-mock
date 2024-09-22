@@ -9,7 +9,7 @@ This project is a Mock D2L app that has some features that are available in DePa
 | Member  | Area                                   | Saying                |
 |---------|----------------------------------------|-----------------------|
 | John    | Discussion Thread                      | I Really Want An A    |
-|         | Course and Course Features             |                       |
+|  Dylan       | Course and Course Features             |  I Also Really Want An A!         |
 | puneeth | Course Admin                           | Let's get a perfect score|
 | Kris    | Student and Student Admin              | GitHub is fun         |
 
@@ -42,5 +42,6 @@ During our meeting on Tuesday September 17th we covered the following
 | 4 | Configuration Management  | Yaml | .env files | Yaml is pretty standard industry wide for configuration management
 
 ## Screenshot of working code
+
 
 
