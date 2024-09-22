@@ -17,7 +17,15 @@ public class StudentTest {
         Doc.setAdmin(false);
         String expectedNoError = "Student(birthdate=8/14/1851, StudentID=12345, firstName=Doc, lastName=Holliday, isAdmin=false)";
         assertEquals(expectedNoError, Doc.toString());
-    }       
+    }
 
-
+    @DisplayName("Test fullName method")
+    @Test
+    public void testFullName() {
+        Student student = new Student();
+        student.setFirstName("Doc");
+        student.setLastName("Holliday");
+        String expectedNoError = "Doc Holliday";
+        assertEquals(expectedNoError, student.getFullName());
+    }
 }
