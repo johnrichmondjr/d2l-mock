@@ -42,6 +42,7 @@ During our meeting on Tuesday September 17th we covered the following
 | 4 | Configuration Management  | Yaml | .env files | Yaml is pretty standard industry wide for configuration management
 
 ## Screenshot of working code
+![image](https://github.com/user-attachments/assets/b12d14e7-b244-43d6-b347-d10e845a06e6)
 
 
 
