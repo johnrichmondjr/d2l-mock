@@ -1,0 +1,78 @@
+package edu.depaul.cdm.se452.d2l_mock;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+/**
+ * CourseController is a REST controller responsible for managing course-related
+ * operations in the system. 
+ 
+ * It provides endpoints for:
+ * 
+ * fetching course details, 
+ * enrolling users in courses, and 
+ * retrieving a list of all available courses.
+ */
+
+@RestController
+@RequestMapping("/courses")
+
+public class CourseController {
+
+    private final CourseService courseService;
+
+    /**
+     * Constructor for CourseController.
+     *
+     * The CourseService is injected via Spring's @Autowired annotation, ensuring
+     * that the controller has access to the business logic required for course management.
+     * 
+     * @param courseService - the service layer that handles course-related logic
+     */
+
+    @Autowired
+    public CourseController(CourseService courseService) {
+        this.courseService = courseService;
+    }
+
+    /**
+     * Retrieves a specific course by its ID.
+     * 
+     * @param courseId - the unique ID of the course to retrieve
+     * @return the Course object if found, or null if the course does not exist
+     */
+
+    @GetMapping("/{courseId}")
+    public Course getCourse(@PathVariable String courseId) {
+        return courseService.getCourseById(courseId);
+    }
+
+    /**
+     * Enrolls a user in a specific course.
+     * 
+     * This method maps to a POST request where the course ID is provided in the URL,
+     * and the User object is provided in the request body.
+     * 
+     * @param courseId - the ID of the course where the user should be enrolled
+     * @param user - the User object containing details of the user to be enrolled
+     */
+
+    @PostMapping("/{courseId}/enroll")
+    public void enrollUserInCourse(@PathVariable String courseId, @RequestBody User user) {
+        courseService.enrollUser(courseId, user);
+    }
+
+    /**
+     * Retrieves a list of all available courses.
+     * This endpoint can be useful for displaying all the courses offered in the system.
+     * 
+     * @return a list of all Course objects
+     */
+
+    @GetMapping
+    public List<Course> getAllCourses() {
+        return courseService.getAllCourses();
+    }
+}
