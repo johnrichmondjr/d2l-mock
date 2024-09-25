@@ -1,17 +1,18 @@
 ## Project Scope
 
-This project is a Mock D2L app that has some features that are available in DePaul's D2L software. The software consist of a few different components: Students, Student admins, Course Admins, Course, Course features, and Discussion Threads. Course Admins will be able to add and remove Courses for a given quarter. Students will be able to be assigned to courses and view courses. Student admins will be able to see some Course features that other students may not. Both Course admins and Students will be able to contribute and post to Discussion Threads.
+This project is a Mock D2L app that has some features that are available in DePaul's D2L software. The software consist of a few different components: Students, Course Admins, Course, Course features, and Discussion Threads. Course Admins will be able to add and remove Courses for a given quarter. Students will be able to be assigned to courses and view courses. Both Course admins and Students will be able to contribute and post to Discussion Threads.
 
 * Milestone 1: Define the project and base structure and areas where each members will be working on based on [prototype](https://app.moqups.com/OrQojpNkdxZkkrM2T6MAwr087SJ1ctHX/view/page/ad64222d5)
+* Milestone 2: Define the database structure
 
 ## Project Members
 
 | Member  | Area                                   | Saying                |
 |---------|----------------------------------------|-----------------------|
 | John    | Discussion Thread                      | I Really Want An A    |
-|  Dylan       | Course and Course Features             |  I Also Really Want An A!         |
-| puneeth | Course Admin                           | Let's get a perfect score|
-| Kris    | Student and Student Admin              | GitHub is fun         |
+| Dylan   | Course, Announcements, Events          |  I Also Really Want An A! 
+| puneeth | User | Let's get a perfect score|
+| Kris    | Student, Student List, Student Profile | GitHub is fun         |
 
 ## Github Location
 
@@ -27,11 +28,26 @@ We will meet via Zoom and communicate through text via Discord. We will meet onc
 
 ## Meeting Journal
 
+9/17/2024
 During our meeting on Tuesday September 17th we covered the following
 * What portion of the project each member will work on
 * We discussed conflict resolution
 * What software we will use for prototyping
 * The scope of the project
+
+9/24/2024
+* Have individual persistence work done by Tuesday 10/1/2024 at 7pm prior to our next meeting
+* We better defined who will work on what
+
+## Contribution Guidelines
+Every contributor should do the following before submitting a PR
+
+* Follow the style guidelines found [here](https://google.github.io/styleguide/javaguide.html) and conform to these guidlines before requesting PR Approval and merge.
+* Ensure that your code compiles and all tests pass prior to requesting Approval and merge.
+* If you are reviewing or merging code ensure that these guidelines are met before merging.
+* Code will not be merged if it does not compile.
+
+
 
 ## Decision Made
 | # | Area  | Decision | Alternative | Rationale
