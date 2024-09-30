@@ -1,3 +1,5 @@
+package edu.depaul.cdm.se452.d2l_mock;
+
 public class CoursePage {
     private AnnouncementComponent announcementComponent;
     private CalendarWidget calendarWidget;
@@ -26,7 +28,7 @@ public class CoursePage {
 
 class AnnouncementComponent {
     // Dummy announcement data for now
-    private String[] announcements = {"Welcome to the course!", "HW 1 due next week!"};
+    private String[] announcements = { "Welcome to the course!", "HW 1 due next week!" };
 
     public void display() {
         for (String announcement : announcements) {
