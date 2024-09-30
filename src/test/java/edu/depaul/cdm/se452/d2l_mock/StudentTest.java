@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import edu.depaul.cdm.se452.d2l_mock.student.Student;
+
 public class StudentTest {
     @DisplayName("Test simple Lombok")
     @Test
@@ -14,8 +16,7 @@ public class StudentTest {
         Doc.setStudentID(12345);
         Doc.setFirstName("Doc");
         Doc.setLastName("Holliday");
-        Doc.setAdmin(false);
-        String expectedNoError = "Student(birthdate=8/14/1851, StudentID=12345, firstName=Doc, lastName=Holliday, isAdmin=false)";
+        String expectedNoError = "Student(birthdate=8/14/1851, StudentID=12345, firstName=Doc, lastName=Holliday)";
         assertEquals(expectedNoError, Doc.toString());
     }
 

@@ -1,3 +1,5 @@
+package edu.depaul.cdm.se452.d2l_mock;
+
 public class CoursePage {
     private AnnouncementComponent announcementComponent;
     private CalendarWidget calendarWidget;

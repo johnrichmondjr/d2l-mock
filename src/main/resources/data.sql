@@ -13,3 +13,14 @@ values
         'Second Thread',
         'This is the second thread'
     );
+
+
+insert into
+    student(studentid, birthdate, first_name, last_name)
+values
+    (
+        12348, 
+        '12/25/12345', 
+        'Santa', 
+        'Claus'
+    );
