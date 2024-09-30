@@ -1,0 +1,12 @@
+app:
+  doc:
+    version: 2024-Fall
+    title: SE452 D2l Mock
+    description: This is a configuration file for the SE452 D2l Mock
+    terms-of-service: http://swagger.io/terms/
+    license:  Apache 2.0
+    url: http://springdoc.org
+
+spring:
+  profiles:
+    active: dev
