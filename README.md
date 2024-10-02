@@ -13,6 +13,7 @@ This project is a Mock D2L app that has some features that are available in DePa
 | Dylan   | Course, Announcements, Events          |  I Also Really Want An A! 
 | puneeth | User | Let's get a perfect score|
 | Kris    | Student, Student List, Student Profile | GitHub is fun         |
+| Stephen | Submissions                            | Rebase > Merge         |
 
 ## Github Location
 
