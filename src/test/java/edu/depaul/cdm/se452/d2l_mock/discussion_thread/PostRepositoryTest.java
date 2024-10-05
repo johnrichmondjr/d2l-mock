@@ -5,12 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.transaction.annotation.Transactional;
 
 @SpringBootTest
-@Transactional
-@ActiveProfiles("dev")
 public class PostRepositoryTest {
     @Autowired
     private PostRepository postRepo;
@@ -18,14 +14,14 @@ public class PostRepositoryTest {
     @Test
     public void testPostRepository() {
         Post post = new Post();
-        post.setContent("I have no idea what's going on in MS1. Please Help!");
+        post.setContent("This is my 6th post! Check data.sql for the other 5 posts.");
         postRepo.save(post);
 
         var postCount = postRepo.count();
-        assertEquals(1, postCount);
+        assertEquals(6, postCount);
 
         String postContent = postRepo.findById(post.getId()).get().getContent();
-        String expectedContent = "I have no idea what's going on in MS1. Please Help!";
+        String expectedContent = "This is my 6th post! Check data.sql for the other 5 posts.";
         assertEquals(expectedContent, postContent);
     }
 }

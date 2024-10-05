@@ -1,5 +1,5 @@
 insert into
-    discussion_thread(title, subject)
+    discussion_threads(title, subject)
 values
     (
         'First Thread',
@@ -7,15 +7,15 @@ values
     );
 
 insert into
-    discussion_thread(title, subject)
+    discussion_threads(title, subject)
 values
     (
         'Second Thread',
         'This is the second thread'
     );
 
-    --assignment seeding
-    insert into
+--assignment seeding
+insert into
     assignments(name, score, due_date)
 values
     (
