@@ -1,5 +1,6 @@
+--discussion thread seeding
 insert into
-    discussion_thread(title, subject)
+    discussion_threads(title, subject)
 values
     (
         'First Thread',
@@ -7,15 +8,40 @@ values
     );
 
 insert into
-    discussion_thread(title, subject)
+    discussion_threads(title, subject)
 values
     (
         'Second Thread',
         'This is the second thread'
     );
 
-    --assignment seeding
-    insert into
+--post seeding
+insert into
+    posts(content, discussion_thread_id)
+values
+    (
+        'This is the first post for thread 1',
+        1
+    ),
+    (
+        'This is the second post for thread 1',
+        1
+    ),
+    (
+        'This is the first post for thread 2',
+        2
+    ),
+    (
+        'This is the second post for thread 2',
+        2
+    ),
+    (
+        'This is the third post for thread 2',
+        2
+    );
+
+--assignment seeding
+insert into
     assignments(name, score, due_date)
 values
     (

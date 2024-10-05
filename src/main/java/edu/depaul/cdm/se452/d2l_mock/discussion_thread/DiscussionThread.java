@@ -5,13 +5,17 @@ import java.util.List;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.CascadeType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 /**
  * DiscussionThread represents a Discussion Thread in a course.
@@ -20,6 +24,7 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @Entity
+@Table(name = "discussion_threads")
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -31,6 +36,8 @@ public class DiscussionThread {
     private String title;
     private String subject;
 
+    @ToString.Exclude
     @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "discussion_thread_id")
     private List<Post> posts;
 }

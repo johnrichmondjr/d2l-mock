@@ -9,12 +9,12 @@ public class DiscussionThreadTest {
     @DisplayName("Test DiscussionThread instantiation")
     @Test
     public void testDiscussionThreadInstantiation() {
-        // Create DiscussionThread
         DiscussionThread discussionThread = new DiscussionThread();
+        discussionThread.setId(1);
         discussionThread.setTitle("Test Title");
         discussionThread.setSubject("A Subject about SE452");
 
-        String expectedString = "DiscussionThread(id=0, title=Test Title, subject=A Subject about SE452, posts=null)";
+        String expectedString = "DiscussionThread(id=1, title=Test Title, subject=A Subject about SE452)";
 
         assertEquals(expectedString, discussionThread.toString());
     }
