@@ -12,6 +12,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 /**
  * DiscussionThread represents a Discussion Thread in a course.
@@ -31,6 +32,7 @@ public class DiscussionThread {
     private String title;
     private String subject;
 
+    @ToString.Exclude
     @OneToMany(fetch = FetchType.EAGER)
     private List<Post> posts;
 }
