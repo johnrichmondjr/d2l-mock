@@ -2,20 +2,26 @@ package edu.depaul.cdm.se452.d2l_mock;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.List;
+import java.util.ArrayList;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import edu.depaul.cdm.se452.d2l_mock.student.Student;
+
 public class StudentTest {
-    @DisplayName("Test simple Lombok")
+    @DisplayName("Test Student")
     @Test
-    public void testLombok() {
+    public void testStudent() {
+        List<Integer> Courses = new ArrayList<Integer>();
+        Courses.add(1990);
+        Courses.add(1991);
         Student Doc = new Student();
-        Doc.setBirthdate("8/14/1851");
+        Doc.setCourseID(Courses);
         Doc.setStudentID(12345);
         Doc.setFirstName("Doc");
         Doc.setLastName("Holliday");
-        Doc.setAdmin(false);
-        String expectedNoError = "Student(birthdate=8/14/1851, StudentID=12345, firstName=Doc, lastName=Holliday, isAdmin=false)";
+        String expectedNoError = "Student(Id=0, CourseID=[1990, 1991], StudentID=12345, firstName=Doc, lastName=Holliday)";
         assertEquals(expectedNoError, Doc.toString());
     }
 
