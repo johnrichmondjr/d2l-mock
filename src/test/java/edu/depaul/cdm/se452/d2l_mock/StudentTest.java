@@ -21,7 +21,7 @@ public class StudentTest {
         Doc.setStudentID(12345);
         Doc.setFirstName("Doc");
         Doc.setLastName("Holliday");
-        String expectedNoError = "Student(Id=0, CourseID=[1990, 1991], StudentID=12345, firstName=Doc, lastName=Holliday)";
+        String expectedNoError = "Student(Id=0, CourseID=[1990, 1991], StudentID=12345, firstName=Doc, lastName=Holliday, profile=null)";
         assertEquals(expectedNoError, Doc.toString());
     }
 
