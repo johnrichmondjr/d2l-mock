@@ -119,4 +119,16 @@ values
         'Parker'
     );
 
+-- Inserting users into users table
+INSERT INTO users (user_id, username, password) VALUES (1, 'puneeth', 'puneeth123');
+INSERT INTO users (user_id, username, password) VALUES (2, 'john', 'john123');
+INSERT INTO users (user_id, username, password) VALUES (3, 'admin', 'admin123');
 
+-- Inserting roles into user_roles table
+INSERT INTO user_roles (role_id, authority) VALUES (1, 'USER');
+INSERT INTO user_roles (role_id, authority) VALUES (2, 'ADMIN');
+
+-- Inserting user-role associations into user_role_junction table
+INSERT INTO user_role_junction (user_id, role_id) VALUES (1, 1);  -- puneeth is a USER
+INSERT INTO user_role_junction (user_id, role_id) VALUES (2, 1);  -- john is a USER
+INSERT INTO user_role_junction (user_id, role_id) VALUES (3, 2);  -- admin is an ADMIN
