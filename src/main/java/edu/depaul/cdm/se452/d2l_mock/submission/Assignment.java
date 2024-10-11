@@ -1,4 +1,4 @@
-package edu.depaul.cdm.se452.d2l_mock.submission.entity;
+package edu.depaul.cdm.se452.d2l_mock.submission;
 
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
