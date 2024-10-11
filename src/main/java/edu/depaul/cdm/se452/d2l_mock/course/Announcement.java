@@ -24,4 +24,14 @@ public class Announcement {
     private String title;
     private String content;
     private String datePosted;
+
+    // Update announcement content
+    public void updateContent(String content) {
+        this.content = content;
+    }
+
+    // Show announcement
+    public String displayAnnouncement() {
+        return String.format("Title: %s\nDate: %s\nContent: %s", title, datePosted, content);
+    }
 }

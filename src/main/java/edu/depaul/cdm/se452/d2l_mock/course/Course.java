@@ -24,4 +24,16 @@ public class Course {
     private String name;
     private String description;
     private String instructor;
+
+    // Update course details
+    public void updateCourseDetails(String name, String description, String instructor) {
+        this.name = name;
+        this.description = description;
+        this.instructor = instructor;
+    }
+
+    // Show course info
+    public String displayCourseInfo() {
+        return String.format("Course: %s\nDescription: %s\nInstructor: %s", name, description, instructor);
+    }
 }

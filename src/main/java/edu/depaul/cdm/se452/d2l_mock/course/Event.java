@@ -1,4 +1,4 @@
-package edu.depaul.cdm.se452.d2l_mock.course;
+package edu.depaul.cdm.se452.d2l_mock.event;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,4 +25,17 @@ public class Event {
     private String date;
     private String time;
     private String description;
+
+    // Update event details
+    public void updateEventDetails(String name, String date, String time, String description) {
+        this.name = name;
+        this.date = date;
+        this.time = time;
+        this.description = description;
+    }
+
+    // Show event information
+    public String displayEventInfo() {
+        return String.format("Event: %s\nDate: %s\nTime: %s\nDescription: %s", name, date, time, description);
+    }
 }
