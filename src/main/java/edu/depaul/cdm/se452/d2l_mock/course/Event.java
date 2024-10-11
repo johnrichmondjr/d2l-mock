@@ -1,4 +1,4 @@
-package edu.depaul.cdm.se452.d2l_mock.event;
+package edu.depaul.cdm.se452.d2l_mock.course;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
