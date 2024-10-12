@@ -16,3 +16,6 @@ During our meeting on Tuesday September 17th we covered the following
 * Lets get all work done for Milestone 2 done by Friday the 11th at 5pm CST
 
 ## 10/11/2024 at 7pm
+* We each gave an update on where we are with our projects.
+* Discussed what still needs to be done for each portion of our projects.
+* Reiterated that we should have our work done by the deadlines we set. There were 2 PRs that still needed to be merged at the time of our meeting.
