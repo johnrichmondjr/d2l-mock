@@ -16,7 +16,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+
 public class Event {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -26,7 +28,7 @@ public class Event {
     private String time;
     private String description;
 
-    // Update event details
+    // Update event details.
     public void updateEventDetails(String name, String date, String time, String description) {
         this.name = name;
         this.date = date;
