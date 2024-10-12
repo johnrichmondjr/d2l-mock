@@ -48,8 +48,6 @@ Every contributor should do the following before submitting a PR
 | 3 | Code  | Lombok | Code template code | We would love to not have to write a ton of boiler plate code for everything
 | 4 | Configuration Management  | Yaml | .env files | Yaml is pretty standard industry wide for configuration management
 
-## Screenshot of working code
-![image](https://github.com/user-attachments/assets/b12d14e7-b244-43d6-b347-d10e845a06e6)
+## Screenshot of working code UPDATED 10/11/2024
 
-
-
+<img width="1383" alt="working_10_11" src="https://github.com/user-attachments/assets/776e096a-b508-46e3-93b7-9149ff72086b">
