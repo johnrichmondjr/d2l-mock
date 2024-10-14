@@ -95,29 +95,76 @@ values
         'Charlottes web'
     ); 
 
-    
+
+insert into 
+    courses(name, description, instructor )
+values(
+            'SE 452',
+            'Object Oriented Enterprise Computing',
+            'Ken Yu'
+      );
+
+
+insert into 
+    courses(name, description, instructor )
+values(
+            'CSC 461',
+            'Optimized C++',
+            'Ed Keenan'
+      ); 
+
+
 insert into
-    student(studentid, profile_id, courseid, first_name, last_name)
+    student(studentid, profile_id, first_name, last_name)
 values
     (
         12348, 
         1,
-        1990, 
         'Santa', 
         'Claus'
     );
 
+insert into 
+    student_enrollment(course_id, student_id)
+values(
+        1,
+        1
+      ); 
+
+insert into 
+    student_enrollment(course_id, student_id)
+values(
+        2,
+        1
+      ); 
+
+
 
 insert into
-    student(studentid, profile_id, courseid, first_name, last_name)
+    student(studentid, profile_id, first_name, last_name)
 values
     (
         12349, 
         2,
-        1990, 
         'Peter', 
         'Parker'
     );
+
+
+
+insert into 
+    student_enrollment(course_id, student_id)
+values(
+        1,
+        2
+      ); 
+
+insert into 
+    student_enrollment(course_id, student_id)
+values(
+        2,
+        2
+      ); 
 
 -- Inserting users into users table
 INSERT INTO users (user_id, username, password) VALUES (1, 'puneeth', 'puneeth123');
