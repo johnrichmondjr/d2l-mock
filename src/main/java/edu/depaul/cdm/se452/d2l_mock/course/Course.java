@@ -10,7 +10,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Data
 @Entity
 @Table(name = "courses")
@@ -25,7 +24,6 @@ public class Course {
     private String name;
     private String description;
     private String instructor;
-
 
     // Update course details
     public void updateCourseDetails(String name, String description, String instructor) {
