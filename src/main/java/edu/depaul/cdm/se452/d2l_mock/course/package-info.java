@@ -2,7 +2,7 @@
  * This package contains the classes that are used to track 
  * assignments and submissions for each course.
  * 
- * @author Dylan Neal
+ * @author - Dylan Neal 
  * 
  */
 
