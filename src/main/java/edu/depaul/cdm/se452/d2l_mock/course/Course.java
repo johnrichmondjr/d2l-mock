@@ -32,7 +32,7 @@ public class Course {
         this.instructor = instructor;
     }
 
-    // Show course info
+    // Show course info.
     public String displayCourseInfo() {
         return String.format("Course: %s\nDescription: %s\nInstructor: %s", name, description, instructor);
     }
