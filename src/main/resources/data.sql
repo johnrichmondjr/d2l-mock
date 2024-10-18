@@ -1,21 +1,3 @@
---assignment seeding
-insert into
-    assignments(name, score, due_date)
-values
-    (
-        'HW1',
-        '0/100',
-        '2024-10-14 23:59:59'
-    );
-
-insert into
-    assignments(name, score, due_date)
-values
-    (
-        'HW2',
-        '0/100',
-        '2024-10-21 23:59:59'
-    );
 
 insert into
     student_profile(
@@ -226,3 +208,27 @@ values
         2,
         1
     );
+
+    --assignment seeding
+insert into
+    assignments(name, score, due_date, course_id,student_id)
+values
+    (
+        'HW1',
+        '0/100',
+        '2024-10-14 23:59:59',
+        1,
+        1
+    );
+
+insert into
+    assignments(name, score, due_date, course_id,student_id)
+values
+    (
+        'HW2',
+        '0/100',
+        '2024-10-21 23:59:59',
+        1,
+        1
+    );
+
