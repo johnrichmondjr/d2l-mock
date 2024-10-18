@@ -16,6 +16,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import edu.depaul.cdm.se452.d2l_mock.course.*;
 
 
@@ -32,11 +35,10 @@ public class StudentEnrollment  {
     private long Id;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @ToString.Exclude
     private Course course;
     
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @ToString.Exclude
+    @JsonBackReference
     private Student student;
 }
