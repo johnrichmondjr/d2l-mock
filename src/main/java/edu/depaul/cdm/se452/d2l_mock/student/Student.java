@@ -1,6 +1,10 @@
 package edu.depaul.cdm.se452.d2l_mock.student;
 
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -36,9 +40,10 @@ public class Student  {
     @JoinColumn(name = "profile_id")
     private StudentProfile profile;
 
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name= "student_id")
+    @OneToMany(mappedBy = "student", fetch = FetchType.EAGER)
+    @JsonManagedReference
     private List<StudentEnrollment> enrollments;
+
     public String getFullName() {
         return firstName + " " + lastName;
     }
