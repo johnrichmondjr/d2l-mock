@@ -27,7 +27,7 @@ public class DiscussionThreadControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    public void getAllStudents() throws Exception {
+    public void getAllDiscussionThreads() throws Exception {
         ResultActions response = mockMvc.perform(MockMvcRequestBuilders.get(DISCUSSION_THREAD_URL));
 
         var recordCount = (int) repo.count();
