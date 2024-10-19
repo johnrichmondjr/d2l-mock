@@ -1,5 +1,7 @@
 package edu.depaul.cdm.se452.d2l_mock.discussion_thread;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import edu.depaul.cdm.se452.d2l_mock.student.Student;
 
 import jakarta.persistence.Entity;
@@ -38,5 +40,6 @@ public class Post {
     private Student student;
 
     @ManyToOne(fetch = FetchType.EAGER)
+    @JsonIgnore
     private DiscussionThread discussionThread;
 }

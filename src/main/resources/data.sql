@@ -177,7 +177,6 @@ INSERT INTO
 VALUES
     (3, 1);
 
--- Leo is a USER
 --discussion thread seeding
 insert into
     discussion_threads(title, subject, student_id)
@@ -186,11 +185,7 @@ values
         'First Thread',
         'This is the first thread',
         1
-    );
-
-insert into
-    discussion_threads(title, subject, student_id)
-values
+    ),
     (
         'Second Thread',
         'This is the second thread',
