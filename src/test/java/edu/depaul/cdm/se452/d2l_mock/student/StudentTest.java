@@ -10,10 +10,9 @@ public class StudentTest {
     @Test
     public void testStudent() {
         Student Doc = new Student();
-        Doc.setStudentID(12345);
         Doc.setFirstName("Doc");
         Doc.setLastName("Holliday");
-        String expectedNoError = "Student(Id=0, StudentID=12345, firstName=Doc, lastName=Holliday, profile=null, enrollments=null)";
+        String expectedNoError = "Student(id=0, firstName=Doc, lastName=Holliday, profile=null, enrollments=null)";
         assertEquals(expectedNoError, Doc.toString());
     }
 
