@@ -17,18 +17,18 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class DiscussionThreadControllerTest {
-    private static final String DISCUSSION_THREAD_URL = "/api/discussion-threads";
+public class PostControllerTest {
+    private static final String POST_URL = "/api/posts";
 
     @Autowired
-    private DiscussionThreadRepository repo;
+    private PostRepository repo;
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    public void getAllDiscussionThreads() throws Exception {
-        ResultActions response = mockMvc.perform(MockMvcRequestBuilders.get(DISCUSSION_THREAD_URL));
+    public void getAllPosts() throws Exception {
+        ResultActions response = mockMvc.perform(MockMvcRequestBuilders.get(POST_URL));
 
         var recordCount = (int) repo.count();
 
@@ -40,22 +40,20 @@ public class DiscussionThreadControllerTest {
     private ObjectMapper objectMapper;
 
     @Test
-    public void addDiscussionThread() throws Exception {
-        DiscussionThread discussionThread = DiscussionThread.builder().title("Thread 1")
-                .subject("This is the first thread").build();
-        String discussionThreadAsJson = objectMapper.writeValueAsString(discussionThread);
+    public void addPost() throws Exception {
+        Post post = Post.builder().content("Post 1 Content").build();
+        String postAsJson = objectMapper.writeValueAsString(post);
 
-        var request = MockMvcRequestBuilders.post(DISCUSSION_THREAD_URL);
+        var request = MockMvcRequestBuilders.post(POST_URL);
         request.contentType(MediaType.APPLICATION_JSON);
-        request.content(discussionThreadAsJson);
+        request.content(postAsJson);
         ResultActions response = mockMvc.perform(request);
 
         var jsonResponse = response.andReturn().getResponse().getContentAsString();
-        DiscussionThread updatedDiscussionThread = new ObjectMapper().readValue(jsonResponse, DiscussionThread.class);
+        Post updatedPost = new ObjectMapper().readValue(jsonResponse, Post.class);
 
         response.andExpect(MockMvcResultMatchers.status().isOk());
 
-        assertNotEquals(updatedDiscussionThread.getId(), discussionThread.getId());
+        assertNotEquals(updatedPost.getId(), post.getId());
     }
-
 }

@@ -98,10 +98,9 @@ values
     );
 
 insert into
-    student(studentid, profile_id, first_name, last_name)
+    student(profile_id, first_name, last_name)
 values
     (
-        12348,
         1,
         'Santa',
         'Claus'
@@ -118,10 +117,9 @@ values
     (2, 1);
 
 insert into
-    student(studentid, profile_id, first_name, last_name)
+    student(profile_id, first_name, last_name)
 values
     (
-        12349,
         2,
         'Peter',
         'Parker'
