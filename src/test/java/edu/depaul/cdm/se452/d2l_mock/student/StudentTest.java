@@ -2,12 +2,8 @@ package edu.depaul.cdm.se452.d2l_mock.student;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.List;
-import java.util.ArrayList;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import edu.depaul.cdm.se452.d2l_mock.student.Student;
 
 public class StudentTest {
     @DisplayName("Test Student")

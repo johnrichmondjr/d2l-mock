@@ -1,11 +1,8 @@
 package edu.depaul.cdm.se452.d2l_mock.discussion_thread;
 
 import edu.depaul.cdm.se452.d2l_mock.student.Student;
-import edu.depaul.cdm.se452.d2l_mock.student.StudentEnrollment;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
