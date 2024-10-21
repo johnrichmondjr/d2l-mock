@@ -6,11 +6,7 @@ values
         'HW1',
         '0/100',
         '2024-10-14 23:59:59'
-    );
-
-insert into
-    assignments(name, score, due_date)
-values
+    ),
     (
         'HW2',
         '0/100',
@@ -46,24 +42,7 @@ values
         'Giving presents to kids',
         'Hanging out with reindeer',
         'A Christmas Carol'
-    );
-
-insert into
-    student_profile(
-        nickname,
-        major,
-        phonenumber,
-        email,
-        employer,
-        highschool,
-        title,
-        university,
-        birthdate,
-        goals,
-        hobbies,
-        books
-    )
-values
+    ),
     (
         'Spiderman',
         'Fighting Crime',
@@ -86,11 +65,7 @@ values
         'SE 452',
         'Object Oriented Enterprise Computing',
         'Ken Yu'
-    );
-
-insert into
-    courses(name, description, instructor)
-values
+    ),
     (
         'CSC 461',
         'Optimized C++',
@@ -98,27 +73,13 @@ values
     );
 
 insert into
-    student(profile_id, first_name, last_name)
+    students(profile_id, first_name, last_name)
 values
     (
         1,
         'Santa',
         'Claus'
-    );
-
-insert into
-    student_enrollment(course_id, student_id)
-values
-    (1, 1);
-
-insert into
-    student_enrollment(course_id, student_id)
-values
-    (2, 1);
-
-insert into
-    student(profile_id, first_name, last_name)
-values
+    ),
     (
         2,
         'Peter',
@@ -128,27 +89,17 @@ values
 insert into
     student_enrollment(course_id, student_id)
 values
-    (1, 2);
-
-insert into
-    student_enrollment(course_id, student_id)
-values
+    (1, 1),
+    (2, 1),
+    (1, 2),
     (2, 2);
 
 -- Inserting users into users table
 INSERT INTO
     users (user_id, username, password)
 VALUES
-    (1, 'puneeth', 'puneeth123');
-
-INSERT INTO
-    users (user_id, username, password)
-VALUES
-    (2, 'john', 'john123');
-
-INSERT INTO
-    users (user_id, username, password)
-VALUES
+    (1, 'puneeth', 'puneeth123'),
+    (2, 'john', 'john123'),
     (3, 'Leo', 'Leo123');
 
 -- Inserting roles into user_roles table
