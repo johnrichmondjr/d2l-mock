@@ -1,17 +1,3 @@
---assignment seeding
-insert into
-    assignments(name, score, due_date)
-values
-    (
-        'HW1',
-        '0/100',
-        '2024-10-14 23:59:59'
-    ),
-    (
-        'HW2',
-        '0/100',
-        '2024-10-21 23:59:59'
-    );
 
 insert into
     student_profile(
@@ -125,6 +111,25 @@ INSERT INTO
     user_role_junction (user_id, role_id)
 VALUES
     (3, 1);
+
+--assignment seeding
+insert into
+    assignments(name, score, due_date, course_id, student_id)
+values
+    (
+        'HW1',
+        '0/100',
+        '2024-10-14 23:59:59',
+        1,
+        1
+    ),
+    (
+        'HW2',
+        '0/100',
+        '2024-10-21 23:59:59',
+        2,
+        1
+    );
 
 --discussion thread seeding
 insert into

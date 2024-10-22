@@ -27,8 +27,9 @@ public class Assignment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long assignmentId;
 
+    @Nonnull
     private String score;
 
     @Nonnull
