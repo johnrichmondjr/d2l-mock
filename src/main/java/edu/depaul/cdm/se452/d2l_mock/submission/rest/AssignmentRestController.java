@@ -2,12 +2,10 @@ package edu.depaul.cdm.se452.d2l_mock.submission.rest;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import edu.depaul.cdm.se452.d2l_mock.submission.Assignment;
 import edu.depaul.cdm.se452.d2l_mock.submission.dto.AssignmentDTO;
 import edu.depaul.cdm.se452.d2l_mock.submission.service.AssignmentService;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,9 +14,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PostMapping;
-
-
-
 
 @RestController
 @RequestMapping("/api")
@@ -39,6 +34,11 @@ public class AssignmentRestController {
         return ResponseEntity.ok(assignment);
     }
 
+    @GetMapping("/assignments/by-course/{id}")
+    public ResponseEntity<List<AssignmentDTO>> getByCourse(@PathVariable Long id) {
+        List<AssignmentDTO> assignments = assignmentService.findByCourse(id);
+        return ResponseEntity.ok(assignments);
+    }
   
     @PostMapping("/assignments")
     public ResponseEntity<Assignment> save(@RequestBody AssignmentDTO dto) {       

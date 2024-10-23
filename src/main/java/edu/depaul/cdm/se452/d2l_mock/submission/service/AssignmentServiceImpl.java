@@ -2,13 +2,12 @@ package edu.depaul.cdm.se452.d2l_mock.submission.service;
 
 import java.util.List;
 import java.util.ArrayList;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import edu.depaul.cdm.se452.d2l_mock.submission.AssignmentRepository;
 import edu.depaul.cdm.se452.d2l_mock.submission.dto.AssignmentDTO;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
 import edu.depaul.cdm.se452.d2l_mock.course.Course;
 import edu.depaul.cdm.se452.d2l_mock.course.CourseRepository;
 import edu.depaul.cdm.se452.d2l_mock.student.Student;
@@ -45,9 +44,14 @@ public class AssignmentServiceImpl implements AssignmentService{
 
         assignment = assignmentRepository.findById(id)
                     .orElseThrow(() -> new EntityNotFoundException("Assignment not found"));
-        
         return mapToDTO(assignment);
     }
+
+    @Override
+    public List<AssignmentDTO> findByCourse(Long id) {
+        return assignmentRepository.findAssignmentsByCourse(id);
+    }
+
 
     @Override
     public Assignment save(AssignmentDTO dto) {
@@ -73,9 +77,6 @@ public class AssignmentServiceImpl implements AssignmentService{
         
         return savedAssignment; // I want to see Assignment entity on save
     }
-
-
-
 
     private AssignmentDTO mapToDTO(Assignment entity) {
         return AssignmentDTO.builder()

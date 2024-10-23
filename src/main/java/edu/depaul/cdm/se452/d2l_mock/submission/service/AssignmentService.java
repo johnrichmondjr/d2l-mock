@@ -11,9 +11,9 @@ public interface AssignmentService {
 
     AssignmentDTO findById(Long id);
 
+    List<AssignmentDTO> findByCourse(Long id);
+
     Assignment save(AssignmentDTO dto);
 
     Assignment update(Long id, AssignmentDTO dto);
-
-    //TODO find by course id
 }
