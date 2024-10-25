@@ -23,9 +23,6 @@ public class DiscussionThreadControllerTest {
     private static final String DISCUSSION_THREAD_URL = "/api/discussion-threads";
 
     @Autowired
-    private DiscussionThreadRepository repo;
-
-    @Autowired
     private MockMvc mockMvc;
 
     @Autowired
