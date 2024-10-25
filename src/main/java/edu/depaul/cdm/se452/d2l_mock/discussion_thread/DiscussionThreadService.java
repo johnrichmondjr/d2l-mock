@@ -12,16 +12,16 @@ public class DiscussionThreadService {
     private DiscussionThreadRepository repo;
 
     public List<DiscussionThread> list() {
-        log.traceEntry("Fetching List of Discussion Threads");
+        log.info("Fetching List of Discussion Threads");
         var retval = repo.findAll();
-        log.traceExit("Done fetching list of Discussion Threads", retval);
+        log.info("Done fetching list of Discussion Threads", retval);
         return retval;
     }
 
     public DiscussionThread save(DiscussionThread discussionThread) {
-        log.traceEntry("Preparing to save Discussion Thread");
+        log.info("Preparing to save Discussion Thread");
         repo.save(discussionThread);
-        log.traceExit("Done saving Discussion Thread", discussionThread);
+        log.info("Done saving Discussion Thread", discussionThread);
         return discussionThread;
     }
 }

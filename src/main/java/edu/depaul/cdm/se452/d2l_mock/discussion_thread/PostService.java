@@ -12,16 +12,16 @@ public class PostService {
     private PostRepository repo;
 
     public List<Post> list() {
-        log.traceEntry("Fetching List of Posts");
+        log.info("Fetching List of Posts");
         var retval = repo.findAll();
-        log.traceExit("Done fetching list of Posts", retval);
+        log.info("Done fetching list of Posts", retval);
         return retval;
     }
 
     public Post save(Post post) {
-        log.traceEntry("Preparing to save Post");
+        log.info("Preparing to save Post");
         repo.save(post);
-        log.traceExit("Done saving Post", post);
+        log.info("Done saving Post", post);
         return post;
     }
 }
