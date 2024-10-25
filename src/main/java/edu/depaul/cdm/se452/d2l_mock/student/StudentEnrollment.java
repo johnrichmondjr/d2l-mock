@@ -1,5 +1,7 @@
 package edu.depaul.cdm.se452.d2l_mock.student;
 
+import java.io.Serializable;
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -22,7 +24,7 @@ import edu.depaul.cdm.se452.d2l_mock.course.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class StudentEnrollment {
+public class StudentEnrollment implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long Id;

@@ -1,6 +1,7 @@
 package edu.depaul.cdm.se452.d2l_mock.student;
 
 import java.util.List;
+import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -24,7 +25,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Student {
+public class Student implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

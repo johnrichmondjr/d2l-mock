@@ -1,6 +1,7 @@
 package edu.depaul.cdm.se452.d2l_mock.discussion_thread;
 
 import java.util.List;
+import java.io.Serializable;
 
 import edu.depaul.cdm.se452.d2l_mock.student.Student;
 
@@ -30,7 +31,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class DiscussionThread {
+public class DiscussionThread implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
