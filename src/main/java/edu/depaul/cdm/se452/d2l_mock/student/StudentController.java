@@ -18,23 +18,22 @@ public class StudentController {
     private StudentService service;
 
     @GetMapping
-    public List<Student> list(){
+    public List<Student> list() {
         return service.list();
     }
 
     @PostMapping
-    public void save(@RequestBody Student student){
-        log.traceEntry("enter save", student);
+    public void save(@RequestBody Student student) {
+        log.info("enter save", student);
         service.save(student);
-        log.traceExit("exit save", student);      
+        log.info("exit save", student);
     }
 
     @DeleteMapping
     public void delete(long code) {
-        log.traceEntry("Enter delete", code);
+        log.info("Enter delete", code);
         service.delete(code);
-        log.traceExit("Exit delete");
+        log.info("Exit delete");
     }
-
 
 }

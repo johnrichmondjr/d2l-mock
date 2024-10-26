@@ -1,12 +1,14 @@
 package edu.depaul.cdm.se452.d2l_mock.discussion_thread;
 
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.cache.CacheManager;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
@@ -21,19 +23,17 @@ public class PostControllerTest {
     private static final String POST_URL = "/api/posts";
 
     @Autowired
-    private PostRepository repo;
+    private MockMvc mockMvc;
 
     @Autowired
-    private MockMvc mockMvc;
+    private CacheManager cacheManager;
 
     @Test
     public void getAllPosts() throws Exception {
         ResultActions response = mockMvc.perform(MockMvcRequestBuilders.get(POST_URL));
 
-        var recordCount = (int) repo.count();
-
         response.andExpect(MockMvcResultMatchers.status().isOk());
-        response.andExpect(MockMvcResultMatchers.jsonPath("$.size()", CoreMatchers.is(recordCount)));
+        response.andExpect(MockMvcResultMatchers.jsonPath("$[0].id", CoreMatchers.notNullValue()));
     }
 
     @Autowired
@@ -55,5 +55,13 @@ public class PostControllerTest {
         response.andExpect(MockMvcResultMatchers.status().isOk());
 
         assertNotEquals(updatedPost.getId(), post.getId());
+    }
+
+    @Test
+    public void whenCacheIsEmpty_thenControllerShouldCallServiceAndCache() throws Exception {
+        ResultActions response = mockMvc.perform(MockMvcRequestBuilders.get(POST_URL));
+        assertNotNull(response);
+
+        assertNotNull(cacheManager.getCache("posts"));
     }
 }

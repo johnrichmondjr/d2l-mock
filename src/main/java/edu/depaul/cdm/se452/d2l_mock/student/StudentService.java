@@ -13,21 +13,21 @@ public class StudentService {
     @Autowired
     private StudentRepository repo;
 
-    public List<Student> list(){
-            List<Student> students = repo.findAll();
-            return students;
+    public List<Student> list() {
+        List<Student> students = repo.findAll();
+        return students;
     }
 
-    public void save(Student student){
-        log.traceEntry("enter save", student);
+    public void save(Student student) {
+        log.info("enter save", student);
         repo.save(student);
-        log.traceEntry("exit save", student);
+        log.info("exit save", student);
     }
 
     public void delete(long code) {
-        log.traceEntry("Enter delete", code);
+        log.info("Enter delete", code);
         repo.deleteById(code);
-        log.traceExit("Exit delete");
+        log.info("Exit delete");
     }
-    
+
 }

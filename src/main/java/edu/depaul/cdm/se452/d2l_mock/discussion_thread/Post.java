@@ -1,5 +1,7 @@
 package edu.depaul.cdm.se452.d2l_mock.discussion_thread;
 
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import edu.depaul.cdm.se452.d2l_mock.student.Student;
@@ -27,7 +29,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Post {
+public class Post implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

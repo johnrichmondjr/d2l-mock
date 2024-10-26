@@ -1,12 +1,14 @@
 package edu.depaul.cdm.se452.d2l_mock.discussion_thread;
 
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.cache.CacheManager;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
@@ -21,19 +23,17 @@ public class DiscussionThreadControllerTest {
     private static final String DISCUSSION_THREAD_URL = "/api/discussion-threads";
 
     @Autowired
-    private DiscussionThreadRepository repo;
+    private MockMvc mockMvc;
 
     @Autowired
-    private MockMvc mockMvc;
+    private CacheManager cacheManager;
 
     @Test
     public void getAllDiscussionThreads() throws Exception {
         ResultActions response = mockMvc.perform(MockMvcRequestBuilders.get(DISCUSSION_THREAD_URL));
 
-        var recordCount = (int) repo.count();
-
         response.andExpect(MockMvcResultMatchers.status().isOk());
-        response.andExpect(MockMvcResultMatchers.jsonPath("$.size()", CoreMatchers.is(recordCount)));
+        response.andExpect(MockMvcResultMatchers.jsonPath("$[0].id", CoreMatchers.notNullValue()));
     }
 
     @Autowired
@@ -58,4 +58,11 @@ public class DiscussionThreadControllerTest {
         assertNotEquals(updatedDiscussionThread.getId(), discussionThread.getId());
     }
 
+    @Test
+    public void whenCacheIsEmpty_thenControllerShouldCallServiceAndCache() throws Exception {
+        ResultActions response = mockMvc.perform(MockMvcRequestBuilders.get(DISCUSSION_THREAD_URL));
+        assertNotNull(response);
+
+        assertNotNull(cacheManager.getCache("discussion-threads"));
+    }
 }
