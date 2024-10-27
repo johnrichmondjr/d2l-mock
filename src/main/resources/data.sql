@@ -128,6 +128,6 @@ INSERT INTO users (user_id, username, password) VALUES (3, 'Leo', 'Leo123');
 INSERT INTO user_roles (role_id, authority) VALUES (1, 'USER');
 
 -- Inserting user-role associations into user_role_junction table
-INSERT INTO user_role_junction (user_id, role_id) VALUES (1, 1);  -- puneeth is a USER
+INSERT INTO user_role_junction (user_id, role_id) VALUES (1, 1);  -- puneeth  is a USER
 INSERT INTO user_role_junction (user_id, role_id) VALUES (2, 1);  -- john is a USER
 INSERT INTO user_role_junction (user_id, role_id) VALUES (3, 1);  -- Leo is a USER
