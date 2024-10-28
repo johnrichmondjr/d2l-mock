@@ -19,13 +19,13 @@ public class StudentService {
     }
 
     public void save(Student student) {
-        log.info("enter save", student);
+        log.info("Preparing to save student", student);
         repo.save(student);
         log.info("exit save", student);
     }
 
     public void delete(long code) {
-        log.info("Enter delete", code);
+        log.info("Preparing to delete student", code);
         repo.deleteById(code);
         log.info("Exit delete");
     }
