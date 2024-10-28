@@ -1,5 +1,7 @@
 package edu.depaul.cdm.se452.d2l_mock.discussion_thread;
 
+import edu.depaul.cdm.se452.d2l_mock.student.Student;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
@@ -18,10 +20,16 @@ public class DiscussionThreadRepositoryTest {
         assertEquals("This is the first thread", thread1.getSubject());
         assertEquals(thread1.getPosts().size(), 2);
 
+        Student student = thread1.getStudent();
+        assertEquals("Santa Claus", student.getFullName());
+
         DiscussionThread thread2 = discussionThreadRepo.findById(2L).get();
         assertEquals("Second Thread", thread2.getTitle());
         assertEquals("This is the second thread", thread2.getSubject());
         assertEquals(thread2.getPosts().size(), 3);
+
+        Student student2 = thread2.getStudent();
+        assertEquals("Peter Parker", student2.getFullName());
 
         Post newPost = Post.builder().content("This is a new post").build();
 

@@ -8,8 +8,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import edu.depaul.cdm.se452.d2l_mock.submission.dao.AssignmentRepository;
-import edu.depaul.cdm.se452.d2l_mock.submission.entity.Assignment;
 
 @SpringBootTest
 public class AssignmentRepositoryTest {

@@ -29,20 +29,7 @@ We will meet via Zoom and communicate through text via Discord. We will meet onc
 
 ## Meeting Journal
 
-9/17/2024 at 7pm
-During our meeting on Tuesday September 17th we covered the following
-* What portion of the project each member will work on
-* We discussed conflict resolution
-* What software we will use for prototyping
-* The scope of the project
-
-9/24/2024 at 7pm
-* Have individual persistence work done by Tuesday 10/1/2024 at 7pm prior to our next meeting
-* We better defined who will work on what
-
-10/1/2024 at 7pm
-* We discussed what new member of the team Stephen could work on
-* Lets get all work done for Milestone 2 done by Friday the 11th at 5pm CST
+See Meeting Journal [here](./MEETING_JOURNAL.md) for a list of the meetings and items we discussed during them.
 
 ## Contribution Guidelines
 Every contributor should do the following before submitting a PR
@@ -53,7 +40,6 @@ Every contributor should do the following before submitting a PR
 * Code will not be merged if it does not compile.
 
 
-
 ## Decision Made
 | # | Area  | Decision | Alternative | Rationale
 | ----------- | ----------- | --- | --- |--- |
@@ -62,8 +48,6 @@ Every contributor should do the following before submitting a PR
 | 3 | Code  | Lombok | Code template code | We would love to not have to write a ton of boiler plate code for everything
 | 4 | Configuration Management  | Yaml | .env files | Yaml is pretty standard industry wide for configuration management
 
-## Screenshot of working code
-![image](https://github.com/user-attachments/assets/b12d14e7-b244-43d6-b347-d10e845a06e6)
+## Screenshot of working code UPDATED 10/11/2024
 
-
-
+<img width="1383" alt="working_10_11" src="https://github.com/user-attachments/assets/776e096a-b508-46e3-93b7-9149ff72086b">

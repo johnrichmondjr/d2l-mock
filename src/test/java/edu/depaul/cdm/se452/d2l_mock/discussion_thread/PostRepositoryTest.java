@@ -15,10 +15,12 @@ public class PostRepositoryTest {
     public void testPostRepository() {
         Post post = new Post();
         post.setContent("This is my 6th post! Check data.sql for the other 5 posts.");
+
+        long b4 = postRepo.count();
         postRepo.save(post);
 
         var postCount = postRepo.count();
-        assertEquals(6, postCount);
+        assertEquals(b4 + 1, postCount);
 
         String postContent = postRepo.findById(post.getId()).get().getContent();
         String expectedContent = "This is my 6th post! Check data.sql for the other 5 posts.";
