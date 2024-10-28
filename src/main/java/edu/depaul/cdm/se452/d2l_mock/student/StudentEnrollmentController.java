@@ -11,27 +11,27 @@ import java.util.List;
 import lombok.extern.log4j.Log4j2;
 
 @RestController
-@RequestMapping("/api/students")
+@RequestMapping("/api/enrollments")
 @Log4j2
-public class StudentController {
+public class StudentEnrollmentController {
     @Autowired
-    private StudentService service;
+    private StudentEnrollmentService service;
 
     @GetMapping
-    public List<Student> list() {
+    public List<StudentEnrollment> list() {
         return service.list();
     }
 
     @PostMapping
-    public void save(@RequestBody Student student) {
-        log.info("Saving student", student);
-        service.save(student);
-        log.info("exit save", student);
+    public void save(@RequestBody StudentEnrollment enrollment) {
+        log.info("Saving enrollment", enrollment);
+        service.save(enrollment);
+        log.info("exit save", enrollment);
     }
 
     @DeleteMapping
     public void delete(long code) {
-        log.info("Deleting student", code);
+        log.info("Deleting enrollment", code);
         service.delete(code);
         log.info("Exit delete");
     }
