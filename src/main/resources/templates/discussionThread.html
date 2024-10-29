@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/navbar :: common-header">
+</head>
+
+<div th:replace="fragments/navbar :: navbar">&nbsp;</div>
+
+<div>
+    <h1># of Replies</h1>
+    <div th:each="post : ${thread.posts}" class="card">
+        <div class="card-body">
+            <p th:text="${post.student.getFullName()}" class="card-text"></p>
+            <p th:text="${post.content}" class="card-text"></p>
+        </div>
+    </div>
+</div>
+
+</html>

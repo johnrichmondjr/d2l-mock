@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="common-header">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/app.css">
+    <title>D2L</title>
+</head>
+
+<nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+    <a th:href="@{/}" class="navbar-brand">D2L</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a th:href="@{/}" class="nav-item nav-link active">Course Home <span class="sr-only">(current)</span></a>
+            <a th:href="@{#}" class="nav-item nav-link">Content</a>
+            <a th:href="@{#}" class="nav-item nav-link">Submissions</a>
+            <a th:href="@{/discussion-threads}" class="nav-item nav-link">Discussion Threads</a>
+        </div>
+    </div>
+</nav>
+
+</html>

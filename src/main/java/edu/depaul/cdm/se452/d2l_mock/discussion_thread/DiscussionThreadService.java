@@ -24,4 +24,11 @@ public class DiscussionThreadService {
         log.info("Done saving Discussion Thread", discussionThread);
         return discussionThread;
     }
+
+    public DiscussionThread findById(long id) {
+        log.info("Fetching Discussion Thread by ID");
+        var retval = repo.findById(id).orElse(null);
+        log.info("Done fetching Discussion Thread by ID", retval);
+        return retval;
+    }
 }
