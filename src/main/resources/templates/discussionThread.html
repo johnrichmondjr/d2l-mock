@@ -10,7 +10,7 @@
     <h1># of Replies</h1>
     <div th:each="post : ${thread.posts}" class="card">
         <div class="card-body">
-            <p th:text="${post.student.getFullName()}" class="card-text"></p>
+            <p th:text="${post.student != null} ? ${post.student.fullName}:''" class="card-text"></p>
             <p th:text="${post.content}" class="card-text"></p>
         </div>
     </div>

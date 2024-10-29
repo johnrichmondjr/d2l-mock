@@ -12,7 +12,7 @@
         <div class="card-body">
             <h5 class="card-title"><a href="#" th:href="@{/discussion-threads/{id}(id=${thread.id})}"
                     th:text="${thread.title}"></a></h5>
-            <p th:text="${thread.student.getFullName()}" class="card-text"></p>
+            <p th:text="${thread.student != null} ? ${thread.student.fullName}:''" class="card-text"></p>
             <p th:text="${thread.subject}" class="card-text"></p>
         </div>
     </div>
