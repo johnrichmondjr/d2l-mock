@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/navbar :: common-header">
+</head>
+
+<div th:replace="fragments/navbar :: navbar">&nbsp;</div>
+
+<body>
+    <h1>New Post</h1>
+    <form action="#" th:action="@{/posts/new}" th:object="${post}" method="post">
+        <div class="form-group">
+            <input type="hidden" class="form-control" id="discussionThreadID" name="discussionThreadID"
+                th:value="${thread.id}">
+        </div>
+        <div class="form-group">
+            <label for="contentInput">Content</label>
+            <textarea th:field="*{content}" class="form-control" id="contentInput" rows="5"
+                placeholder="Enter Post Content Here ..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Post</button>
+    </form>
+</body>
+
+</html>

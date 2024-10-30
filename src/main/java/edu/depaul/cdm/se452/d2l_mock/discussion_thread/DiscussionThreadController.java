@@ -10,26 +10,25 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.cache.annotation.Cacheable;
 
 @Controller
 @RequestMapping("/discussion-threads")
 public class DiscussionThreadController {
     @Autowired
-    private DiscussionThreadService service;
+    private DiscussionThreadService threadService;
 
     @GetMapping
     @Cacheable(value = "discussion-threads")
     public String list(Model model) {
-        List<DiscussionThread> threads = service.list();
+        List<DiscussionThread> threads = threadService.list();
         model.addAttribute("threads", threads);
         return "discussion_thread/list";
     }
 
     @GetMapping("/{id}")
     public String get(@PathVariable long id, Model model) {
-        DiscussionThread thread = service.findById(id);
+        DiscussionThread thread = threadService.findById(id);
         model.addAttribute("thread", thread);
         return "discussion_thread/show";
     }
@@ -42,8 +41,16 @@ public class DiscussionThreadController {
 
     @PostMapping("/new")
     public String create(@ModelAttribute DiscussionThread thread, Model model) {
-        service.save(thread);
+        threadService.save(thread);
         model.addAttribute("thread", thread);
         return "discussion_thread/show";
+    }
+
+    @GetMapping("/{id}/new-post")
+    public String createPost(@PathVariable long id, Model model) {
+        DiscussionThread thread = threadService.findById(id);
+        model.addAttribute("thread", thread);
+        model.addAttribute("post", new Post());
+        return "discussion_thread/new_post";
     }
 }
