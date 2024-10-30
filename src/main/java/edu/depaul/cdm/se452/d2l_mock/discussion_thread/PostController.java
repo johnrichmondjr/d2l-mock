@@ -7,9 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
-import lombok.extern.log4j.Log4j2;
 
-@Log4j2
 @Controller
 @RequestMapping("/posts")
 public class PostController {
