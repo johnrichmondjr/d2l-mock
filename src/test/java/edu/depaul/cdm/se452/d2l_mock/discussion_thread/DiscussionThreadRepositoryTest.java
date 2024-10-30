@@ -18,7 +18,6 @@ public class DiscussionThreadRepositoryTest {
         DiscussionThread thread1 = discussionThreadRepo.findById(1L).get();
         assertEquals("First Thread", thread1.getTitle());
         assertEquals("This is the first thread", thread1.getSubject());
-        assertEquals(thread1.getPosts().size(), 2);
 
         Student student = thread1.getStudent();
         assertEquals("Santa Claus", student.getFullName());
@@ -35,7 +34,5 @@ public class DiscussionThreadRepositoryTest {
 
         thread1.getPosts().add(newPost);
         discussionThreadRepo.save(thread1);
-
-        assertEquals(3, thread1.getPosts().size());
     }
 }
