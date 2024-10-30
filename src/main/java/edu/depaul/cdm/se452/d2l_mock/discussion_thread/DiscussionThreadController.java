@@ -23,14 +23,20 @@ public class DiscussionThreadController {
     public String list(Model model) {
         List<DiscussionThread> threads = service.list();
         model.addAttribute("threads", threads);
-        return "discussionThreads";
+        return "discussion_thread/list";
     }
 
     @GetMapping("/{id}")
     public String get(@PathVariable long id, Model model) {
         DiscussionThread thread = service.findById(id);
         model.addAttribute("thread", thread);
-        return "discussionThread";
+        return "discussion_thread/show";
+    }
+
+    @GetMapping("/new")
+    public String create(Model model) {
+        model.addAttribute("thread", new DiscussionThread());
+        return "discussion_thread/new";
     }
 
     @PostMapping
