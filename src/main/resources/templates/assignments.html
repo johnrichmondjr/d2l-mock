@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/navbar :: common-header">
+</head>
+<body>
+<div th:replace="fragments/navbar :: navbar">&nbsp;</div>
+
+<div>
+    <h1>Assignments</h1>
+    <div th:each="assignment : ${assignments}" class="card">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="#" th:href="@{/submissions/{id}(id=${assignment.assignmentId})}" th:text="${assignment.name}"></a>
+            </h5>
+            <p class="card-text">
+                <span th:text="'Score: ' + ${assignment.score}"></span> - 
+                <span th:text="'Due Date: ' + ${assignment.dueDate}"></span> -
+                <span th:text="${studentNamesByAssignmentId[assignment.assignmentId]}"></span>
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
