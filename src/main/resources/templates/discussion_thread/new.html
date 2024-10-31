@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/navbar :: common-header">
+</head>
+
+<div th:replace="fragments/navbar :: navbar">&nbsp;</div>
+
+<body>
+    <h1>New Thread</h1>
+    <form action="#" th:action="@{/discussion-threads/new}" th:object="${thread}" method="post">
+        <div class="form-group">
+            <label for="titleInput">Title</label>
+            <input th:field="*{title}" type="text" class="form-control" id="titleInput" placeholder="Enter a Title ...">
+        </div>
+        <div class="form-group">
+            <label for="subjectInput">Subject</label>
+            <textarea th:field="*{subject}" class="form-control" id="subjectInput" rows="5"
+                placeholder="Enter a Subject Here ..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Post</button>
+    </form>
+</body>
+
+</html>

@@ -22,3 +22,6 @@ During our meeting on Tuesday September 17th we covered the following
 
 ## 10/15/2024 at 7pm
 * We discussed having Milestone 3 done by 10/23/2024 at 5pm CST.
+
+## 10/29/2024 at 7pm
+* Work on Front End for your portion of the project
