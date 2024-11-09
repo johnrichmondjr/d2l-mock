@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import edu.depaul.cdm.se452.d2l_mock.submission.AssignmentRepository;
 import edu.depaul.cdm.se452.d2l_mock.submission.dto.AssignmentDTO;
 import jakarta.persistence.EntityNotFoundException;
-import jakarta.transaction.Transactional;
 import edu.depaul.cdm.se452.d2l_mock.course.Course;
 import edu.depaul.cdm.se452.d2l_mock.course.CourseRepository;
 import edu.depaul.cdm.se452.d2l_mock.student.Student;
