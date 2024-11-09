@@ -2,6 +2,8 @@ package edu.depaul.cdm.se452.d2l_mock.discussion_thread;
 
 import edu.depaul.cdm.se452.d2l_mock.student.Student;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
@@ -34,5 +36,13 @@ public class DiscussionThreadRepositoryTest {
 
         thread1.getPosts().add(newPost);
         discussionThreadRepo.save(thread1);
+    }
+
+    @Test
+    void testFindByStudentId() {
+        List<DiscussionThread> threads = discussionThreadRepo.findByStudentId(1L);
+        assertEquals(1, threads.size());
+        assertEquals("First Thread", threads.get(0).getTitle());
+        assertEquals("This is the first thread", threads.get(0).getSubject());
     }
 }

@@ -1,8 +1,5 @@
 package edu.depaul.cdm.se452.d2l_mock.student;
 
-
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;

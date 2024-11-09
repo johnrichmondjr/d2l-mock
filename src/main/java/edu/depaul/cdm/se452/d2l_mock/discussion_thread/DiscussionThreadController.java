@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.cache.annotation.Cacheable;
 
 @Controller
 @RequestMapping("/discussion-threads")
@@ -19,7 +18,6 @@ public class DiscussionThreadController {
     private DiscussionThreadService threadService;
 
     @GetMapping
-    @Cacheable(value = "discussion-threads")
     public String list(Model model) {
         List<DiscussionThread> threads = threadService.list();
         model.addAttribute("threads", threads);
