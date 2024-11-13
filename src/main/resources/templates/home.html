@@ -9,5 +9,14 @@
 <div>
     <h1>This is a D2L Application</h1>
 </div>
-
+<div>
+<h2>Login</h2>
+<form action="http://localhost:8080/api/users/login" method="POST">
+    <label for="username">Username: </label>
+    <input type="text" id="username" name="username" required><br><br>
+    <label for="password">Password: </label>
+    <input type="password" id="password" name="password" required><br><br>
+    <input type="submit" value="Login">
+</form>
+</div>
 </html>
