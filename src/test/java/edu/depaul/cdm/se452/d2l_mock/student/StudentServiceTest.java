@@ -6,7 +6,9 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.hamcrest.CoreMatchers;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 
@@ -14,23 +16,17 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 @AutoConfigureMockMvc
 public class StudentServiceTest {
     @Autowired
-    private StudentRepository repo;
+    private StudentService service;
 
-    @Autowired
-    private MockMvc mvc;
-
-    private static final String studenturl = "/api/students";
 
     @Test
     public void getStudents() throws Exception{
-        ResultActions response = mvc.perform(MockMvcRequestBuilders.get(studenturl));
+       
+        List<Student> students = service.list();
+        int count = (int)students.size();
 
-        int count = (int)repo.count();
-
-
-        response.andExpect(MockMvcResultMatchers.status().isOk());
-		response.andExpect(MockMvcResultMatchers.jsonPath("$.size()", CoreMatchers.is(count)));
-
+        assertEquals(count, 2);
+       
     }
     
 }
