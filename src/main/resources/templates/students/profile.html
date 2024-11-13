@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/navbar :: common-header">
+</head>
+
+<div th:replace="fragments/navbar :: navbar">&nbsp;</div>
+
+<div>
+    <font size="4"> 
+        <b>ID</b>>
+        <td th:text="${profile.id}" />
+        <br>
+       <b>Nickname</b>>
+        <td th:text="${profile.nickname}" />
+        <br>
+        <b>Major</b>>
+        <td th:text="${profile.major}" />
+        <br>
+        <b>Phone Number</b>>
+        <td th:text="${profile.phonenumber}" />
+        <br>
+        <b>Email</b>>
+        <td th:text="${profile.email}" />
+        <br>
+        <b>Employer</b>>
+        <td th:text="${profile.employer}" />
+        <br>
+        <b>High School</b>>
+        <td th:text="${profile.highschool}" />
+        <br>
+        <b>Title</b>>
+        <td th:text="${profile.title}" />
+        <br>
+        <b>University</b>>
+        <td th:text="${profile.university}" />
+        <br>
+        <b>Birthdate</b>>
+        <td th:text="${profile.birthdate}" />
+        <br>
+       <b>Goals</b>>
+        <td th:text="${profile.goals}" />
+        <br>
+       <b>Hobbies</b>>
+        <td th:text="${profile.hobbies}" />
+        <br>
+        <b>Books</b>>
+        <td th:text="${profile.books}" />
+        <br>
+        </font>
+        
+    
+</div>
+
+</html>

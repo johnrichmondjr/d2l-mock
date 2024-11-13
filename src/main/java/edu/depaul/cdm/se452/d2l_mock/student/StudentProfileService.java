@@ -18,6 +18,13 @@ public class StudentProfileService {
         return profiles;
     }
 
+    public StudentProfile findbyId(long id) {
+        log.info("Preparing to find profile by ID");
+        StudentProfile profile = repo.findById(id).orElse(null);
+        log.info("Found ID");
+        return profile;
+    }
+
     public void save(StudentProfile profile) {
         log.info("Preparing to save profile", profile);
         repo.save(profile);
