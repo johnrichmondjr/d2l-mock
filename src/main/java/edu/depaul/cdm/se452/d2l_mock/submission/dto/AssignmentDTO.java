@@ -23,5 +23,8 @@ public class AssignmentDTO {
     public final Long courseId;
 
     @NonNull
+    public final String courseName;
+
+    @NonNull
     public final Long studentId;
 }

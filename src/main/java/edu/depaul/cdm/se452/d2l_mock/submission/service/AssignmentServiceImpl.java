@@ -101,6 +101,7 @@ public class AssignmentServiceImpl implements AssignmentService{
             .score(entity.getScore())
             .studentId(entity.getStudent().getId())
             .name(entity.getName())
+            .courseName(entity.getCourse().getName())
             .build();
     }
     
