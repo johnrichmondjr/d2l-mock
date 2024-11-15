@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>edu.depaul.cdm.se452</groupId>
 	<artifactId>d2l-mock</artifactId>
-	<version>0.3.0-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>d2l-mock</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
