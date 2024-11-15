@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/navbar :: common-header">
+</head>
+<body>
+<div th:replace="fragments/navbar :: navbar">&nbsp;</div>
+
+<div>
+    <h1>Edit Assignment</h1>
+    <form th:action="@{/submissions/{id}(id=${assignment.assignmentId})}" method="post">
+        <div class="form-group">
+            <label for="name">Assignment Name:</label>
+            <input type="text" id="name" name="name" th:value="${assignment.name}" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="courseName">Course Name:</label>
+            <input type="text" id="courseName" name="courseName" th:value="${assignment.courseName}" class="form-control" readonly />
+        </div>
+
+        <div class="form-group">
+            <label for="score">Score:</label>
+            <input type="text" id="score" name="score" th:value="${assignment.score}" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="dueDate">Due Date:</label>
+            <input type="text" id="dueDate" name="dueDate" th:value="${assignment.dueDate}" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="studentId">Student ID:</label>
+            <input type="text" id="studentId" name="studentId" th:value="${assignment.studentId}" class="form-control" readonly />
+        </div>
+
+        <input type="hidden" name="courseId" th:value="${assignment.courseId}" />
+
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a href="/submissions" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+</body>
+</html>

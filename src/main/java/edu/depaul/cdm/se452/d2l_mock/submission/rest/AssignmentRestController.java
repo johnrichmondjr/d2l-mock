@@ -41,14 +41,14 @@ public class AssignmentRestController {
     }
   
     @PostMapping("/assignments")
-    public ResponseEntity<Assignment> save(@RequestBody AssignmentDTO dto) {       
-        Assignment savedAssignment = assignmentService.save(dto);
+    public ResponseEntity<AssignmentDTO> save(@RequestBody AssignmentDTO dto) {       
+        AssignmentDTO savedAssignment = assignmentService.save(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedAssignment);
     }
 
     @PutMapping("/assignments/{id}")
-    public ResponseEntity<Assignment> update(@PathVariable Long id, @RequestBody AssignmentDTO dto) {       
-        Assignment updatedAssignment = assignmentService.update(id, dto);
+    public ResponseEntity<AssignmentDTO> update(@PathVariable Long id, @RequestBody AssignmentDTO dto) {       
+        AssignmentDTO updatedAssignment = assignmentService.update(id, dto);
         return ResponseEntity.ok(updatedAssignment);
     }
 }

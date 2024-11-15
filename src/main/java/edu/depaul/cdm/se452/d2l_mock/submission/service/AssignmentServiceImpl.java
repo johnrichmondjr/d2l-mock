@@ -37,6 +37,9 @@ public class AssignmentServiceImpl implements AssignmentService{
         return dtoList;
     }
 
+    
+
+
     @Override
     public AssignmentDTO findById(Long id) {
         Assignment assignment = new Assignment();
@@ -51,17 +54,29 @@ public class AssignmentServiceImpl implements AssignmentService{
         return assignmentRepository.findAssignmentsByCourse(id);
     }
 
-
     @Override
-    public Assignment save(AssignmentDTO dto) {
-        Assignment assignment = mapToEntity(dto);
-        Assignment savedAssignment = assignmentRepository.save(assignment);
-        
-        return savedAssignment; // I want to see Assignment entity on save
+    public String getStudentFullName(Long assignmentId) {
+        Assignment assignment = assignmentRepository.findById(assignmentId).orElse(null);
+
+        if (assignment != null){
+        String student = assignment.getStudent().getFullName();
+        return student;
+        }
+
+        return null;
     }
 
     @Override
-    public Assignment update(Long id, AssignmentDTO dto) {
+    public AssignmentDTO save(AssignmentDTO dto) {
+        Assignment assignment = mapToEntity(dto);
+        Assignment savedAssignment = assignmentRepository.save(assignment);
+        AssignmentDTO returnedAssignment = mapToDTO(assignmentRepository.findById(savedAssignment.getAssignmentId()).orElse(null));
+        
+        return returnedAssignment;
+    }
+
+    @Override
+    public AssignmentDTO update(Long id, AssignmentDTO dto) {
 
         assignmentRepository.findById(id)
             .orElseThrow(() -> new EntityNotFoundException("Assignment not found"));
@@ -73,8 +88,9 @@ public class AssignmentServiceImpl implements AssignmentService{
 
         Assignment assignment = mapToEntity(dto);
         Assignment savedAssignment = assignmentRepository.save(assignment);
+        AssignmentDTO returnedAssignment = mapToDTO(assignmentRepository.findById(savedAssignment.getAssignmentId()).orElse(null));
         
-        return savedAssignment; // I want to see Assignment entity on save
+        return returnedAssignment;
     }
 
     private AssignmentDTO mapToDTO(Assignment entity) {
@@ -85,6 +101,7 @@ public class AssignmentServiceImpl implements AssignmentService{
             .score(entity.getScore())
             .studentId(entity.getStudent().getId())
             .name(entity.getName())
+            .courseName(entity.getCourse().getName())
             .build();
     }
     
@@ -115,5 +132,6 @@ public class AssignmentServiceImpl implements AssignmentService{
 
         return assignment;
     }
+
 
 }
