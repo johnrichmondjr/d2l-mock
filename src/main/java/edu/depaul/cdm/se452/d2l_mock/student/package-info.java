@@ -11,7 +11,10 @@
  * Added Unit tests for testing StudentService, StudentRepository, and Student
  * Created Student Information section on the frontend
  * Created Student Profiles pages on the frontend
+ * Created Edit Profile functionality
  * Added data for Students, StudentProfile, and Enrollments
+ * Added logging for StudentService, ProfileService, and EnrollmentService
+ * Used findbyId for StudentProfileService
  * 
  * 
  */
