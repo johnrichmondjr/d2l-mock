@@ -1,11 +1,11 @@
 package edu.depaul.cdm.se452.d2l_mock.submission.rest;
+import edu.depaul.cdm.se452.d2l_mock.submission.service.AssignmentService;
+
+import java.util.List;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import edu.depaul.cdm.se452.d2l_mock.submission.Assignment;
 import edu.depaul.cdm.se452.d2l_mock.submission.dto.AssignmentDTO;
-import edu.depaul.cdm.se452.d2l_mock.submission.service.AssignmentService;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
