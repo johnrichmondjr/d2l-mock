@@ -10,15 +10,11 @@ import edu.depaul.cdm.se452.d2l_mock.submission.service.AssignmentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.cache.annotation.Cacheable;
 
 @Controller
 @RequestMapping("/submissions")
@@ -27,7 +23,6 @@ public class AssignmentController {
     private AssignmentService service;
 
     @GetMapping
-    @Cacheable(value = "submissions")
     public String list(Model model) {
         List<AssignmentDTO> assignments = service.findAll();
         model.addAttribute("assignments", assignments);
@@ -44,7 +39,7 @@ public class AssignmentController {
     }
 
     @PostMapping
-public String addAssignment(
+    public String addAssignment(
     @RequestParam String name,
     @RequestParam String score,
     @RequestParam String dueDate,
@@ -71,8 +66,8 @@ public String addAssignment(
         return "submissions/assignment";
     }
 
-@PostMapping("/{id}")
-public String update(
+    @PostMapping("/{id}")
+    public String update(
     @PathVariable long id,
     @RequestParam String name,
     @RequestParam String score,
